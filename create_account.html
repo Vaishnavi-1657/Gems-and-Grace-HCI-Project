@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <style>
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #74ebd5, #acb6e5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        /* Container styling */
+        .container {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            max-width: 100%;
+            text-align: center;
+        }
+
+        /* Headings */
+        h1 {
+            font-size: 28px;
+            color: #4b79a1;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 22px;
+            color: #6c757d;
+            margin-bottom: 20px;
+        }
+
+        /* Input fields */
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 90%;
+            padding: 12px 15px;
+            margin: 10px 0;
+            border: 1px solid #ced4da;
+            border-radius: 8px;
+            font-size: 14px;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #74ebd5;
+            box-shadow: 0 0 5px #74ebd5;
+        }
+
+        /* Submit button */
+        button {
+            width: 100%;
+            padding: 12px 15px;
+            background: linear-gradient(135deg, #74ebd5, #4b79a1);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #4b79a1, #74ebd5);
+        }
+
+        /* Link styling */
+        .message {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .message a {
+            color: #4b79a1;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .message a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form id="createAccountForm">
+            <h1>Happy Stays</h1>
+            <div class="create-account-container">
+                <h2>Create Account</h2>
+                <input type="text" id="newUsername" placeholder="Username" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" id="newPassword" placeholder="Password" required>
+                <button type="submit">Sign Up</button>
+                <p class="message">
+                    Already have an account? <a href="login.html">Login</a>
+                </p>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('createAccountForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+            const username = document.getElementById('newUsername').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('newPassword').value;
+
+            // Simulated account creation logic
+            if (username && email && password) {
+                alert('Account created successfully!');
+                window.location.href = 'login.html'; 
+            } else {
+                alert('Please fill out all fields.');
+            }
+        });
+    </script>
+</body>
+</html>

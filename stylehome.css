@@ -1,0 +1,48 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    background-image: url("https://thumbs.dreamstime.com/b/logo-template-real-estate-apartment-condo-house-rental-business-brand-branding-logotype-company-corporate-identity-clean-modern-171478027.jpg");
+    opacity: 2.0;
+    
+}
+
+
+header {
+    background-color: #bdef18;
+    color: rgb(25, 22, 22);
+    text-align: center;
+    padding: 1rem 0;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+}
+
+.action-button {
+    background-color: #bc2a38;
+    color: white;
+    text-decoration: none;
+    align-items: center;
+    padding: 15px 25px;
+    justify-content: center;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    
+}
+
+.action-button:hover {
+    background-color: #4baedb;
+    align-items: center;
+}

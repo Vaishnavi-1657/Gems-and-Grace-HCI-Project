@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>Buy a House</title>
+    <style>
+        body {
+            background-color: #f9f9f9; /* Light background color */
+            font-family: Arial, sans-serif; /* Set a clean, readable font */
+            color: #333; /* Text color */
+        }
+
+        header {
+            text-align: center; /* Center the header text */
+            margin-bottom: 20px; /* Add margin below the header */
+        }
+
+        .filters {
+            margin: 20px;
+            padding: 20px;
+            background-color: #f2f2f2; /* Light gray background for filter section */
+            border-radius: 8px;
+        }
+
+        .property {
+            display: block;
+            margin-bottom: 30px; /* Added spacing between listings */
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .property.hidden {
+            display: none;
+        }
+
+        .property-image {
+            width: 100%;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+        }
+
+        .property-details {
+            padding: 10px;
+        }
+
+        .property-details h2 {
+            margin: 10px 0;
+        }
+
+        .property-details p {
+            margin: 10px 10;
+        }
+
+        #no-results {
+            display: none;
+            text-align: center;
+            font-size: 18px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Find Your Dream Home</h1>
+    </header>
+
+    <!-- Filter Section -->
+    <section class="filters">
+        <h2>Filter Properties</h2>
+        <form id="filter-form">
+            <label for="location">Location:</label>
+            <select id="location" name="location">
+                <option value="all">All Locations</option>
+                <option value="kompally">Kompally</option>
+                <option value="kukatpally">Kukatpally</option>
+                <option value="hyderabad">Hyderabad</option>
+                <option value="banjara-hills">Banjara Hills</option>
+                <option value="gachibowli">Gachibowli</option>
+            </select>
+
+            <label for="price-range">Price Range:</label>
+            <select id="price-range" name="price-range">
+                <option value="all">All Prices</option>
+                <option value="2-3">2 - 3 Crores</option>
+                <option value="3-4">3 - 4 Crores</option>
+                <option value="4+">Above 4 Crores</option>
+            </select>
+
+            <label for="property-type">Property Type:</label>
+            <select id="property-type" name="property-type">
+                <option value="all">Any Type</option>
+                <option value="family">Family Home</option>
+                <option value="apartment">Apartment</option>
+                <option value="villa">Villa</option>
+            </select>
+
+            <button type="submit">Apply Filters</button>
+        </form>
+    </section>
+
+    <main>
+        <!-- Property Listings -->
+
+        <!-- Property Listing 1 -->
+        <section class="property" data-location="kompally" data-price="2" data-type="family">
+            <div class="property-image" style="background-image: url('https://i.pinimg.com/originals/63/d8/7f/63d87f3f4a745c020b3e6552e0009067.jpg');"></div>
+            <div class="property-details">
+                <h2>Beautiful Family Home</h2>
+                <p>Location: Kompally, Hyderabad</p>
+                <p>Price: 2 Crores</p>
+                <p>Contact: 954295875</p>
+                <p>Owner Name: Naresh</p>
+            </div>
+        </section>
+
+        <!-- Property Listing 2 -->
+        <section class="property" data-location="kukatpally" data-price="2.5" data-type="family">
+            <div class="property-image" style="background-image: url('https://assets.architecturaldigest.in/photos/61de9b8d0f339dca4bd2963f/16:9/w_2560%2Cc_limit/Manipal%2520home.jpg');"></div>
+            <div class="property-details">
+                <h2>Family Home</h2>
+                <p>Location: Kukatpally, Hyderabad</p>
+                <p>Price: 2.5 Crores</p>
+                <p>Contact: 954295875</p>
+                <p>Owner Name: Srinivas</p>
+            </div>
+        </section>
+
+        <!-- Property Listing 3 -->
+        <section class="property" data-location="banjara-hills" data-price="3.5" data-type="villa">
+            <div class="property-image" style="background-image: url('images/house1.jpg');"></div>
+
+            <div class="property-details">
+                <h2>Luxury Villa</h2>
+                <p>Location: Banjara Hills, Hyderabad</p>
+                <p>Price: 3.5 Crores</p>
+                <p>Contact: 9123456789</p>
+                <p>Owner Name: Ramesh</p>
+            </div>
+        </section>
+
+        <!-- Property Listing 4 -->
+        <section class="property" data-location="gachibowli" data-price="4" data-type="apartment">
+            <div class="property-image" style="background-image: url('https://i.ibb.co/SK5pRr7/EMERALD-APARTMENT.jpg');"></div>
+
+            <div class="property-details">
+                <h2>Modern Apartment</h2>
+                <p>Location: Gachibowli, Hyderabad</p>
+                <p>Price: 4 Crores</p>
+                <p>Contact: 9445678901</p>
+                <p>Owner Name: Priya</p>
+            </div>
+        
+        </section>
+
+        <!-- Property Listing 5 -->
+        <section class="property" data-location="hyderabad" data-price="5" data-type="villa">
+            <div class="property-image" style="background-image: url('https://i.ibb.co/2FYLWYw/Incredible-Melbourne-Australia-Home-Dream-Estate-with-Pool-January-2024.jpg');"></div>
+            <div class="property-details">
+                <h2>Spacious Luxury Villa</h2>
+                <p>Location: Hyderabad</p>
+                <p>Price: 5 Crores</p>
+                <p>Contact: 9845123456</p>
+                <p>Owner Name: Kumar</p>
+            </div>
+        </section>
+
+        <!-- Property Listing 6 -->
+        <section class="property" data-location="kukatpally" data-price="2.2" data-type="family">
+            <div class="property-image" style="background-image: url('https://i.ibb.co/BGdG6hv/Mr-Arun-Vadanappilly.jpg' );"></div>
+            <div class="property-details">
+                <h2>Comfortable Family Home</h2>
+                <p>Location: Kukatpally, Hyderabad</p>
+                <p>Price: 2.2 Crores</p>
+                <p>Contact: 9574231122</p>
+                <p>Owner Name: Lakshmi</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- No Results Message Section -->
+    <section id="no-results" style="display: none; text-align: center; font-size: 18px; color: red;">
+        <p>No properties match your selected filters.</p>
+    </section>
+
+    <script>
+        const filterForm = document.getElementById('filter-form');
+        const properties = document.querySelectorAll('.property');
+        const noResultsMessage = document.getElementById('no-results');
+
+        filterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const selectedLocation = document.getElementById('location').value;
+            const selectedPrice = document.getElementById('price-range').value;
+            const selectedType = document.getElementById('property-type').value;
+
+            let visibleProperties = 0;
+
+            properties.forEach(property => {
+                const location = property.getAttribute('data-location');
+                const price = parseFloat(property.getAttribute('data-price'));
+                const type = property.getAttribute('data-type');
+
+                const matchesLocation = selectedLocation === 'all' || selectedLocation === location;
+                const matchesPrice = selectedPrice === 'all' ||
+                                     (selectedPrice === '2-3' && price >= 2 && price <= 3) ||
+                                     (selectedPrice === '3-4' && price > 3 && price <= 4) ||
+                                     (selectedPrice === '4+' && price > 4);
+                const matchesType = selectedType === 'all' || selectedType === type;
+
+                if (matchesLocation && matchesPrice && matchesType) {
+                    property.classList.remove('hidden');
+                    visibleProperties++;
+                } else {
+                    property.classList.add('hidden');
+                }
+            });
+
+            if (visibleProperties === 0) {
+                noResultsMessage.style.display = 'block';
+            } else {
+                noResultsMessage.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

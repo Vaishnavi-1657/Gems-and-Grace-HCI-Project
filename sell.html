@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell Your House</title>
+    <link rel="stylesheet" href="sell.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Sell Your House</h1>
+        <form action="#" method="post" enctype="multipart/form-data">
+            <label for="picture">Upload Picture:</label>
+            <input type="file" id="picture" name="picture" accept="image/*" required>
+
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" placeholder="Enter the location" required>
+
+            <label for="price">Price(₹):</label>
+            <input type="number" id="price" name="price" placeholder="Enter the price" required>
+
+            <label for="contact">contact :</label>
+            <input type="number" id="number" name="number" placeholder="Enter the number" required>
+
+            <label for="Name">Name:</label>
+            <input type="text" id="Name" name="Name" placeholder="Enter your Name" required>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script>
+            document.querySelector('form').addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent the default form submission
+                const container = document.querySelector('.container');
+                container.innerHTML = '<h1>Thank you for submitting your details!</h1>';
+            });
+        </script>
+        
+</body>
+</html>

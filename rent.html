@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>Rent Houses</title>
+    <style>
+        body {
+            background-color: #f9f9f9; /* Light background color */
+            font-family: Arial, sans-serif; /* Set a clean, readable font */
+            color: #333; /* Text color */
+        }
+
+        header {
+            text-align: center; /* Center the header text */
+            margin-bottom: 20px; /* Add margin below the header */
+        }
+
+        .filters {
+            margin: 20px;
+            padding: 20px;
+            background-color: #f2f2f2; /* Light gray background for filter section */
+            border-radius: 8px;
+        }
+
+        .property {
+            display: block;
+            margin-bottom: 30px; /* Added spacing between listings */
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .property.hidden {
+            display: none;
+        }
+
+        .property-image {
+            width: 100%;
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+        }
+
+        .property-details {
+            padding: 10px;
+        }
+
+        .property-details h2 {
+            margin: 10px 0;
+        }
+
+        .property-details p {
+            margin: 5px 0;
+        }
+
+        #no-results {
+            display: none;
+            text-align: center;
+            font-size: 18px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Find Your Rental Home</h1>
+    </header>
+
+    <!-- Filter Section -->
+    <section class="filters">
+        <h2>Filter Rental Properties</h2>
+        <form id="filter-form">
+            <label for="location">Location:</label>
+            <select id="location" name="location">
+                <option value="all">All Locations</option>
+                <option value="uppal">Uppal</option>
+                <option value="dilsukhnagar">Dilsukhnagar</option>
+                <option value="hyderabad">Hyderabad</option>
+                <option value="gachibowli">Gachibowli</option>
+            </select>
+
+            <label for="rent-range">Rent Range:</label>
+            <select id="rent-range" name="rent-range">
+                <option value="all">All Rents</option>
+                <option value="10000-15000">10,000 - 15,000/month</option>
+                <option value="15000-20000">15,000 - 20,000/month</option>
+                <option value="20000+">Above 20,000/month</option>
+            </select>
+
+            <label for="property-type">Property Type:</label>
+            <select id="property-type" name="property-type">
+                <option value="all">Any Type</option>
+                <option value="house">House</option>
+                <option value="townhouse">Townhouse</option>
+                <option value="apartment">Apartment</option>
+            </select>
+
+            <button type="submit">Apply Filters</button>
+        </form>
+    </section>
+
+    <main>
+        <!-- Property Listings -->
+
+        <!-- Property Listing 1 -->
+        <section class="property" data-location="uppal" data-rent="10200" data-type="house">
+            <div class="property-image" style="background-image: url('https://i.ytimg.com/vi/xl8SXW-Sfvc/maxresdefault.jpg');"></div>
+            <div class="property-details">
+                <h2>House</h2>
+                <p>Location: Uppal, Hyderabad</p>
+                <p>Rent: 10,200/month</p>
+                <p>Contact: 9392534878</p>
+                <p>Owner Name: Ramu</p>
+            </div>
+        </section>
+
+        <!-- Property Listing 2 -->
+        <section class="property" data-location="dilsukhnagar" data-rent="15000" data-type="townhouse">
+            <div class="property-image" style="background-image: url('https://i0.wp.com/www10.aeccafe.com/blogs/arch-showcase/files/2014/04/C-6.jpg');"></div>
+            <div class="property-details">
+                <h2>Townhouse</h2>
+                <p>Location: Dilsukhnagar, Hyderabad</p>
+                <p>Rent: 15,000/month</p>
+                <p>Contact: 9392534878</p>
+                <p>Owner Name: Venkatesh</p>
+            </div>
+        </section>
+
+        <!-- Property Listing 3 -->
+        <section class="property" data-location="gachibowli" data-rent="18000" data-type="apartment">
+            <div class="property-image" style="background-image: url('https://i.ibb.co/2PTgrgL/Apartment-Architecture-History-Sustainability-Materials-And-Typical-Prices.jpg');"></div>
+            <div class="property-details">
+                <h2>Luxury Apartment</h2>
+                <p>Location: Gachibowli, Hyderabad</p>
+                <p>Rent: 18,000/month</p>
+                <p>Contact: 9445678901</p>
+                <p>Owner Name: Suresh</p>
+            </div>
+        </section>
+
+        <!-- Property Listing 4 -->
+        <section class="property" data-location="hyderabad" data-rent="22000" data-type="townhouse">
+            <div class="property-image" style="background-image: url('https://i.ibb.co/GdmzSrp/NEW-4-BR-House-in-Town-and-Country-San-Fernando.jpg');"></div>
+            <div class="property-details">
+                <h2>Spacious Townhouse</h2>
+                <p>Location: Hyderabad</p>
+                <p>Rent: 22,000/month</p>
+                <p>Contact: 9123456789</p>
+                <p>Owner Name: Kiran</p>
+            </div>
+        </section>
+
+        <!-- Property Listing 5 -->
+        <section class="property" data-location="uppal" data-rent="12000" data-type="house">
+            <div class="property-image" style="background-image: url(' https://i.ibb.co/pXQKRtC/download-2.jpg');"></div>
+            <div class="property-details">
+                <h2>Comfortable House</h2>
+                <p>Location: Uppal, Hyderabad</p>
+                <p>Rent: 12,000/month</p>
+                <p>Contact: 9591234567</p>
+                <p>Owner Name: Meena</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- No Results Message Section -->
+    <section id="no-results" style="display: none; text-align: center; font-size: 18px; color: red;">
+        <p>No properties match your selected filters.</p>
+    </section>
+
+    <script>
+        const filterForm = document.getElementById('filter-form');
+        const properties = document.querySelectorAll('.property');
+        const noResultsMessage = document.getElementById('no-results');
+
+        filterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const selectedLocation = document.getElementById('location').value;
+            const selectedRent = document.getElementById('rent-range').value;
+            const selectedType = document.getElementById('property-type').value;
+
+            let visibleProperties = 0;
+
+            properties.forEach(property => {
+                const location = property.getAttribute('data-location');
+                const rent = parseInt(property.getAttribute('data-rent'));
+                const type = property.getAttribute('data-type');
+
+                const matchesLocation = selectedLocation === 'all' || selectedLocation === location;
+                const matchesRent = selectedRent === 'all' ||
+                                    (selectedRent === '10000-15000' && rent >= 10000 && rent <= 15000) ||
+                                    (selectedRent === '15000-20000' && rent > 15000 && rent <= 20000) ||
+                                    (selectedRent === '20000+' && rent > 20000);
+                const matchesType = selectedType === 'all' || selectedType === type;
+
+                if (matchesLocation && matchesRent && matchesType) {
+                    property.classList.remove('hidden');
+                    visibleProperties++;
+                } else {
+                    property.classList.add('hidden');
+                }
+            });
+
+            if (visibleProperties === 0) {
+                noResultsMessage.style.display = 'block';
+            } else {
+                noResultsMessage.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
